@@ -1,0 +1,33 @@
+name: Build and Package for Ubuntu
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build-ubuntu:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.10.10  # Replace with your Python version
+
+    - name: Install dependencies
+      run: |
+        pip install -r requirements.txt  # Install dependencies if needed
+
+    - name: Build for Ubuntu
+      run: |
+        pyinstaller --noconsole --onefile main.py
+
+    - name: Upload Ubuntu Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ubuntu-exe
+        path: path/to/ubuntu/exe  # Replace with your actual path
