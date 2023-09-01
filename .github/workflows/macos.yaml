@@ -22,7 +22,12 @@ jobs:
     - name: Build for macOS
       run: |
         pyinstaller --noconsole --onefile main.py
+    - name: Show Path
+      run: |
+        cd dist
+        ls
 
+    
     - name: Upload macOS Artifact
       uses: actions/upload-artifact@v2
       with:
