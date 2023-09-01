@@ -24,7 +24,7 @@ jobs:
         pyinstaller --noconsole --onefile main.py
 
     - name: Upload Ubuntu Artifact
-      uses: actions/upload-artifact@v2
+      # uses: actions/upload-artifact@v2
       run: |
         cd dist
         ls
