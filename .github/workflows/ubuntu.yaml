@@ -25,6 +25,9 @@ jobs:
 
     - name: Upload Ubuntu Artifact
       uses: actions/upload-artifact@v2
+      run: |
+        cd dist
+        ls
       with:
         name: ubuntu-exe
         path: dist/main.app  # Replace with your actual path
