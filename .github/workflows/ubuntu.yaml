@@ -22,12 +22,13 @@ jobs:
     - name: Build for Ubuntu
       run: |
         pyinstaller --noconsole --onefile main.py
-
-    - name: Upload Ubuntu Artifact
-      # uses: actions/upload-artifact@v2
+    - name: Show Path
       run: |
-        cd dist/main
+        cd dist
         ls
-      # with:
-      #   name: ubuntu-exe
-      #   path: dist/main.app  # Replace with your actual path
+    
+    - name: Upload Ubuntu Artifact
+      uses: actions/upload-artifact@v2
+      with:
+        name: ubuntu-exe
+        path: dist/main  # Replace with your actual path
