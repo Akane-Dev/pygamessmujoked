@@ -26,7 +26,7 @@ jobs:
     - name: Upload Ubuntu Artifact
       # uses: actions/upload-artifact@v2
       run: |
-        cd dist
+        cd dist/main
         ls
       # with:
       #   name: ubuntu-exe
